@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: 2nd partial  
+# key: part2
+# --
+\frac{\partial^{2} $1}{\partial $2^{2} }$0

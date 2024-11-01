@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: Presentation 
+# key: <pres
+# --
+
+\documentclass{beamer}
+\title{$1}
+\author{$2}
+\date{\today}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{braket}
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+
+$3
+
+\end{frame}

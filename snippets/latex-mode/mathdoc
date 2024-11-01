@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: Mathematical Latex Document 
+# key: <mdoc
+# --
+
+\documentclass[12pt]{article}
+\usepackage{multicol}
+\usepackage{amsmath, amsfonts, bm}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{svg}
+\usepackage{braket}
+\usepackage{graphicx}
+\usepackage[legalpaper, margin=0.7in]{geometry}
+\title{${1:Title}}
+\author{${2:Author}}
+\date{\today}
+\begin{document}
+\maketitle
+
+$0
+
+\end{document}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name:2nd derivative 
+# key: <d2
+# --
+\frac{d^{2}$1}{d$2^{2}}$0

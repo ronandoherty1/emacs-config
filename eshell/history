@@ -1,0 +1,128 @@
+chmod +x stateTransfer2.py 
+cp python/plots/conditionalinfo.svg conditionalinfo.svg
+ls python/plots/
+sudo vim /etc/init.d/startup_wrapper.sh
+mkdir ~/Documents/BSCSocial
+mv ~/Desktop/Bcourse/111B/johnsont=1secf=280.4hz\ Analysed\ Data.csv.html ~/Desktop/Lab\ reports/111B/LLS/
+ls
+rm johnsont\=1secf=280.4hz\ Analysed\ Data.csv.html 
+mkdir Desktop/complabs/statphys
+mkdir Desktop/complabs/statphys/hw2
+touch Desktop/complabs/statphys/hw2/ex6.py
+rm Desktop/complabs/statphys/hw2/ex6.py 
+touch Desktop/complabs/statphys/hw2/ex6.ipynb
+mkdir test
+cp analysisexp8.py exp9/analysisexp9.py
+mv part7_4* exp11/
+nnn
+nnn
+ls
+mkdir sources
+mkdir Documents/URAP
+mkdir pictures
+mv rb* pictures/
+mkdir python
+rm -rf test.py
+cd Desktop/complabs/statphys/hw7/
+rm *
+ls
+rm ex1
+ls
+rm ex1\~ 
+c++ minimal.cpp 
+c++ test.cpp 
+c++ test.cpp 
+c++ test.cpp -I /usr/include/python3.10/ 
+ls
+c++ test.cpp -I /usr/include/python3.10/ -1python3.10
+g++ test.cpp -I /usr/include/python3.10/ 
+g++ -h
+g++ --h
+g++ test.cpp -I /usr/include/python3.10/ out
+touch out
+g++ test.cpp -I /usr/include/python3.10/ out
+ls
+g++ test.cpp -I /usr/include/python3.10/ -1 python
+g++ test.cpp -I /usr/include/python3.10/ -python3.10
+g++ test.cpp -I /usr/include/python3.10/
+g++ minimal.cpp -std=c++11 -I/usr/include/python2.7 -lpython2.7
+g++ test.cpp -std=c++11 -I/usr/include/python2.7 -lpython2.7
+g++ test.cpp -std=c++11 -I /usr/include/python2.7 -lpython2.7
+g++ test.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+ls
+g++ test.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+ls
+./a.out 
+git clone https://github.com/CD3/libIntegrate
+ls
+rm a.out 
+rm mono_crash.
+ls
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+g++ test_integrate.cpp -std=c++11 -I/usr/include/python3.10 -lpython3.10
+cd
+mkdir profiles
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+./out.out 
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+./out.out 
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+./out.out 
+./out.out 
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+./out.out 
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+g++ test.cpp -o out.out
+mkdir Desktop/Lab\ reports/111B/Rutherford/Analysis
+cd Desktop/Lab\ reports/111B/Rutherford/
+mkdir data
+mkdir Documents/thoughts

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Infinite Integral 
+# key: <infint
+# --
+
+\int_{-\infty}^{\infty}

@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: Latex Document Template 
+# key: <doc
+# --
+
+\documentclass[12pt]{article}
+\usepackage[legalpaper, margin=0.5in]{geometry}
+\title{${1:title}}
+\author{${2:author}}
+\begin{document}
+\maketitle
+
+$0
+
+\end{document}

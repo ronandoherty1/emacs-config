@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Derivative 
+# key: <d
+# --
+
+\frac{d$1}{d$2}$0

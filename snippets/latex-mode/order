@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Order 
+# key: <ord
+# --
+
+\mathcal{O}($1)$0

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Create equation 
+# key: <seqn
+# --
+
+\begin{equation}
+$0
+\end{equation}
