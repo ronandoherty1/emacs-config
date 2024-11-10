@@ -29,7 +29,7 @@
 ;;Enable Evil
 (require 'evil)
 (evil-mode 1)
-;;Setting keybindings with evil
+;;Setting global keybindings with evil
 (evil-set-leader 'normal (kbd "SPC"))
 (define-key evil-normal-state-map (kbd "<leader>b") 'switch-to-buffer)
 (define-key evil-normal-state-map (kbd "<leader>e") 'eval-buffer)
@@ -53,10 +53,7 @@
   (evil-set-undo-system 'undo-tree)
   (global-undo-tree-mode 1))
 
-;;Dracula theme
-;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-;;(load-theme 'dracula t)
-
+;;Setting theme
 (use-package solo-jazz-theme
   :ensure t
   :config
@@ -78,7 +75,6 @@
 ;;Get rid of quote
 (setq dashboard-set-footer nil)
 
-
 ;;Adding icons to widgets and items
 (use-package all-the-icons
   :if (display-graphic-p))
@@ -90,6 +86,10 @@
 (require 'all-the-icons)
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
+
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -126,25 +126,14 @@
  '(org-level-7 ((t (:inherit default :weight bold :foreground "gray80" :family "Sans Serif"))))
  '(org-level-8 ((t (:inherit default :weight bold :foreground "gray80" :family "Sans Serif")))))
 
+
+
 ;;Setting load path to org mode
 (add-to-list 'load-path "~/src/org-mode/lisp")
-
-
-;;Setting org mode keybindings globally
-(global-set-key (kbd "C-c l") #'org-store-link)
-(global-set-key (kbd "C-c a") #'org-agenda)
-(global-set-key (kbd "C-c c") #'org-capture)
-
-;;Turning on Font Lock in Org buffers
-;;(add-hook 'org-mode-hook #'turn-on-font-lock)
 
 ;;Add org agenda file
 (setq org-agenda-files '("~/Documents/todo.org"))
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
-
-
-;;Add agenda
-;;(add-to-list 'dashboard-items '(agenda) t)
 
 ;;fragtog
 (add-hook 'org-mode-hook 'org-fragtog-mode)
@@ -165,6 +154,7 @@
 ;;Hopefully setting visual-line-mode
 (global-visual-line-mode t)
 ;;(add-hook 'org-mode-hook 'visual-line-mode)
+
 ;;Setting different size fonts for headlines
  (let* ((variable-tuple
           (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
@@ -187,15 +177,28 @@
      `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
      `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
      `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
+
 ;;Setting org key-bindings
 (add-hook 'org-mode-hook
 	  (lambda()
 	    (define-key evil-normal-state-map (kbd "TAB") 'org-cycle)
 	    (define-key evil-normal-state-map (kbd "<leader>TAB") 'org-cycle)
+	    (define-key evil-insert-state-map (kbd "M-l") 'org-do-demote)
+	    (define-key evil-insert-state-map (kbd "M-h") 'org-do-promote)
+	    (define-key evil-insert-state-map (kbd "M-L") 'org-todo)
 	    (define-key evil-normal-state-map (kbd "<leader>l") 'org-insert-link)
 	    (define-key evil-normal-state-map (kbd "<leader>u") 'org-todo)
 	    (define-key evil-normal-state-map (kbd "<leader>i") 'org-latex-preview)
 	    (define-key evil-normal-state-map (kbd"<leader>r") 'org-redisplay-inline-images)))
+
+;;Setting pdf viewer for org hyperlinks
+(setq org-file-apps
+      '((auto-mode . emacs)
+        ("\\.pdf\\'" . "zathura %s")))
+
+;;Add org bullets
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;;org mode hook for visual-line mode
 (add-hook 'org-fill-mode-hook (lambda() (auto-fill-mode)))
@@ -219,6 +222,7 @@
 
 ;;(add-hook 'org-mode-hook (lambda()
 ;;			   ((define-key evil-normal-state-map (kbd "<leader>p") 'make-python-code-block))))
+
 
 ;;Inline org images
 (setq org-startup-with-inline-images t)
@@ -258,18 +262,8 @@
 (require 'neotree)
 (define-key evil-normal-state-map (kbd "<leader>n") 'neotree-toggle)
 
-;(evil-set-initial-state 'neotree-mode 'emacs)
-			
 ;;Changing keybindings in to work in evil normal mode
 (add-hook 'neotree-mode-hook
-;	   (lambda ()
-;	     (message "Entering NeoTree mode, disabling Evil mode.")
-;	     (local-set-key (kbd "j") 'neotree-next-line)
-;	     (local-set-key (kbd "k") 'neotree-previous-line)
-;	     (local-set-key (kbd "SPC") 'neotree-quick-look)
-;	     (local-set-key (kbd "TAB") 'neotree-collapse-all)
-;	     (local-set-key (kbd "l") 'neotree-change-root)
-;	     (local-set-key (kbd "q") 'neotree-hide)))
 	  (lambda ()
 ;	    (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
 	    (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-collapse-all)
@@ -292,8 +286,6 @@
 ;;Loading path to mu4e
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
 
-;;c-eval
-;;(define-key evil-normal-state-map (kbd "<leader>C") 'c-eval-buffer)
 
 
 ;;auctex
@@ -335,6 +327,8 @@
 (add-hook 'TeX-after-compilation-finished-functions
 	  'TeX-revert-document-buffer)
 
+
+
 ;;smart brackets in python
 (add-hook 'python-mode-hook #'smartparens-mode)
 
@@ -348,9 +342,6 @@
 (add-to-list 'load-path "~/.emacs.d/r-mode")
 (require 'r-mode)
 
-;;Add org bullets
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;;Add flycheck
 (use-package flycheck
@@ -361,6 +352,11 @@
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 
+;;Setting yasnippets keybindings
+(define-key evil-insert-state-map (kbd "M-SPC") 'yas-expand)
+(define-key evil-insert-state-map (kbd "M-n") 'yas-next-field)
+(define-key evil-insert-state-map (kbd "M-p") 'yas-prev-field)
+
 ;;Use pdftools
 (pdf-tools-install)
 
@@ -368,18 +364,8 @@
 (setq tramp-default-method "ssh")
 (put 'dired-find-alternate-file 'disabled nil)
 
-;;Setting pdf viewer for org hyperlinks
-(setq org-file-apps
-      '((auto-mode . emacs)
-        ("\\.pdf\\'" . "zathura %s")))
 
 ;;Setting emacs to stop double checking if I want to kill buffers with processes running
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
-;; Locally changing the 
-(add-hook 'org-mode-hook
-          (lambda ()
-            (define-key evil-insert-state-map (kbd "M-SPC") 'yas-expand)
-            (define-key evil-insert-state-map (kbd "M-n") 'yas-next-field)
-            (define-key evil-insert-state-map (kbd "M-p") 'yas-prev-field)))
