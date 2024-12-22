@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Operator name ln 
+# key: <ln
+# --
+operatorname{ln}$0
