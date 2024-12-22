@@ -1,0 +1,3 @@
+This is a basic configuration, designed to leverage emacs as an IDE, a latex editor, an organisational tool and more. It's set up to have the most efficient and ergonomical keybindings possible, using a combination of evil mode and custom keybindings. 
+
+In order for this to work, certain larger libraries such as elpy may need to be installed manually.

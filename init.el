@@ -27,8 +27,11 @@
       scroll-margin 3)
 
 ;;Enable Evil
-(require 'evil)
-(evil-mode 1)
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
+
 ;;Setting global keybindings with evil
 (evil-set-leader 'normal (kbd "SPC"))
 (define-key evil-normal-state-map (kbd "<leader>b") 'switch-to-buffer)
@@ -59,9 +62,17 @@
   :config
   (load-theme 'solo-jazz t))
 
+;;Adding icons to widgets and items
+(use-package all-the-icons
+  :ensure t
+  :config
+  :if (display-graphic-p))
+
 ;;Setting up a dashboard
-(require 'dashboard)
-(dashboard-setup-startup-hook)
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
 
 ;;centre content
 (setq dashboard-center-content t)
@@ -75,15 +86,11 @@
 ;;Get rid of quote
 (setq dashboard-set-footer nil)
 
-;;Adding icons to widgets and items
-(use-package all-the-icons
-  :if (display-graphic-p))
-
 ;;Setting widgets
 (setq dashboard-items '((recents  . 10)
+                        (projects  . 10)
                         (agenda . 10)))
 
-(require 'all-the-icons)
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
 
@@ -95,22 +102,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
- '(ispell-dictionary nil)
- '(minimap-mode nil)
- '(minimap-window-location 'right)
- '(org-agenda-files
-   '("/home/ronan/Documents/exchange/todo.org" "/home/ronan/Documents/exchange/CERN_questions.org" "/home/ronan/Documents/exchange/all.org" "/home/ronan/Documents/exchange/calendar.org" "/home/ronan/Documents/exchange/itinerary.org" "/home/ronan/Documents/exchange/rooms.org" "/home/ronan/Documents/exchange/travel_and_reentry.org" "/home/ronan/Documents/exchange/vaccines.org"))
- '(org-directory "~/Documents/exchange")
  '(package-selected-packages
-   '(magit org-anki yasnippet flycheck solo-jazz-theme org-bullets pdf-tools undo-tree spell-fu jedi smartparens org-fragtog auctex wc-mode anki-editor c-eval minimap elpy dracula-theme rainbow-delimiters emms sage-shell-mode use-package maxima dashboard evil))
- '(sage-shell:check-ipython-version-on-startup nil)
- '(sage-shell:set-ipython-version-on-startup nil)
- '(sage-shell:use-prompt-toolkit nil)
- '(sage-shell:use-simple-prompt t))
+   '(magit org-anki yasnippet solo-jazz-theme jedi smartparens auctex wc-mode anki-editor c-eval elpy rainbow-delimiters use-package)))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -136,6 +130,8 @@
 (setq dashboard-filter-agenda-entry 'dashboard-no-filter-agenda)
 
 ;;fragtog
+(use-package org-fragtog
+  :ensure t)
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 
 (defun my/org-fragtog-preview-all ()
@@ -197,7 +193,8 @@
         ("\\.pdf\\'" . "zathura %s")))
 
 ;;Add org bullets
-(require 'org-bullets)
+(use-package org-bullets
+  :ensure t)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;;org mode hook for visual-line mode
@@ -280,14 +277,6 @@
 ;	    (define-key evil-normal-state-local-map (kbd "U") 'neotree-directory-up)
             (define-key evil-normal-state-local-map (kbd "H") 'neotree-hidden-file-toggle)))
 
-;;Setting keybinding for minimap
-(define-key evil-normal-state-map (kbd "<leader>m") 'minimap-mode)
-
-;;Loading path to mu4e
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/mu4e")
-
-
-
 ;;auctex
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
@@ -360,12 +349,19 @@
 ;;Use pdftools
 (pdf-tools-install)
 
-;;Tramp settings
-(setq tramp-default-method "ssh")
-(put 'dired-find-alternate-file 'disabled nil)
-
-
 ;;Setting emacs to stop double checking if I want to kill buffers with processes running
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function kill-buffer-query-functions))
 
+
+;;Setting up minimap
+(use-package minimap
+  :ensure t
+  :config
+  (setq minimap-mode 'nil)
+  (setq minimap-window-location 'right))
+
+(define-key evil-normal-state-map (kbd "<leader>m") 'minimap-mode)
+
+(provide 'init)
+;;; init.el ends here
